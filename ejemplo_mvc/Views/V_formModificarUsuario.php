@@ -9,8 +9,9 @@
 </head>
 
 <body>
+
     <form action="C_modificarUsuario.php" method="post">
-        <input type="text" name="username" placeholder="username">
+        <input type="text" name="username" value="<?php echo $_GET['username']; ?>" readonly >
         <input type="text" name="nombre" placeholder="nombre">
         <input type="text" name="password" placeholder="password">
         <input type="submit" value="Modificar">

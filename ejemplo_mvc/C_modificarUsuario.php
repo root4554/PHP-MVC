@@ -6,6 +6,7 @@ use Model\Usuario;
 require_once 'Model/Usuario.php';
 require_once 'Model/M_Usuario.php';
 
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 $nombre = $_POST['nombre'];
@@ -16,9 +17,8 @@ echo $nombre;
 
 $con = new M_Usuario();
 
-$usuario = new Usuario($username, $password, $nombre);
-
-$con->modficarUsuario($usuario);
+$con->modficarUsuario($username, $password, $nombre);
 $con->close();
 
+header("Location: C_verUsuarios.php");
 exit();
