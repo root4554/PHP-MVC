@@ -18,17 +18,18 @@
         </thead>
         <tbody>
             <?php
-			foreach ($usuarios as $usuario) {
-				echo "<tr>";
-				echo "<td>" . $usuario['username'] . "</td>";
-				echo "<td>" . $usuario['password'] . "</td>";
-				echo "<td>" . $usuario['nombre'] . "</td>";
-				echo "<td><a href='C_mostrarModificarUsuario.php'>Modificar</a></td>";
-				echo "<td><a href='C_eliminarUsuario.php?username=" . $usuario['username'] . "'>Eliminar</a></td>";
-				echo "</tr>";
-			}
-
-			?>
+            foreach ($usuarios as $usuario) {
+                echo "<form method='post'>";
+                echo "<tr>";
+                echo "<td>" . $usuario['username'] . "</td>";
+                echo "<td>" . $usuario['password'] . "</td>";
+                echo "<td>" . $usuario['nombre'] . "</td>";
+                echo '<td><a href="C_mostrarModificarUsuario.php?username=' . $usuario['username'] . '"> Modificar</a></td>';
+                echo '<td><a href="C_eliminarUsuario.php?username=' . $usuario['username'] . '"> Eliminar</a></td>';
+                echo "</tr>";
+                echo "</form>";
+            }
+            ?>
         </tbody>
     </table>
 </body>

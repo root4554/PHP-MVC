@@ -1,2 +1,2 @@
 <?php
-require('Views/V_formModificarUsuario.php.php');
+require('Views/V_formModificarUsuario.php');

@@ -13,7 +13,7 @@
         <input type="text" name="username" placeholder="username">
         <input type="text" name="nombre" placeholder="nombre">
         <input type="text" name="password" placeholder="password">
-        <input type="submit" value="Guardar">
+        <input type="submit" value="Modificar">
     </form>
 </body>
 

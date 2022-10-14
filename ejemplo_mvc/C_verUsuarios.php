@@ -9,5 +9,3 @@ $usuarios = $con->getUsers();
 $con->close();
 
 require ('Views/V_verUsuarios.php');
-
-?>

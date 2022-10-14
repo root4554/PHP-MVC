@@ -32,7 +32,7 @@ class M_Usuario extends Conexion
 
     public function modficarUsuario(Usuario $usuario)
     {
-        $sentencia = parent::con()->prepare("UPDATE USER SET USERNAME ='?', PASSWORD = '?', NOMBRE = '?' WHERE USERNAME = '?'");
+        $sentencia = parent::con()->prepare("UPDATE USER SET USERNAME =?, PASSWORD = ?, NOMBRE = ? WHERE USERNAME = ?");
 
         $sentencia->bind_param("ssss", $usuario->getUsername(), $usuario->getPassword(), $usuario->getNombre(), $usuario->getUsername());
 
@@ -40,11 +40,11 @@ class M_Usuario extends Conexion
         $sentencia->close();
     }
 
-    public function eliminarUsuario(Usuario $usuario)
+    public function eliminarUsuario($username)
     {
-        $sentencia = parent::con()->prepare("DELETE FROM USER WHERE USERNAME = '?'");
+        $sentencia = parent::con()->prepare("DELETE FROM usuarios WHERE username = ?");
 
-        $sentencia->bind_param("s", $usuario->getUsername());
+        $sentencia->bind_param("s", $username);
 
         $sentencia->execute();
         $sentencia->close();
