@@ -32,7 +32,7 @@ class M_Usuario extends Conexion
 
     public function modficarUsuario(Usuario $usuario)
     {
-        $sentencia = parent::con()->prepare("UPDATE USER SET USERNAME =?, PASSWORD = ?, NOMBRE = ? WHERE USERNAME = ?");
+        $sentencia = parent::con()->prepare("UPDATE usuarios SET username =?, password = ?, nombre = ? WHERE username = ?");
 
         $sentencia->bind_param("ssss", $usuario->getUsername(), $usuario->getPassword(), $usuario->getNombre(), $usuario->getUsername());
 

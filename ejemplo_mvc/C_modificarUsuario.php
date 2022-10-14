@@ -10,6 +10,10 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $nombre = $_POST['nombre'];
 
+echo $username . "<br>";
+echo $password . "<br>";
+echo $nombre;
+
 $con = new M_Usuario();
 
 $usuario = new Usuario($username, $password, $nombre);
